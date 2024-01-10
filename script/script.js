@@ -30,6 +30,7 @@ e.preventDefault();
         form.reset(); 
         document.getElementById("card-title").innerHTML ="Noutbuk Adamler"
         document.getElementById("card-price").innerHTML ="2400$"
+        document.getElementById("card-type").innerHTML ="aser"
         document.getElementById("card-color").innerHTML ="Black"
         document.getElementById("card-description").innerHTML ="Noutbuk Adreamer 16 dyuymli 8 GB RAM 512 GB SSD, ko'k"
         document.getElementById("card-picture").setAttribute("src","../images/cla98rl6sfhgee0lrapg.jpg")
@@ -59,7 +60,12 @@ description.onkeyup = function(){
     let a = document.querySelector('#card-description')
     a.innerHTML = description.value ? description.value : "Bu mahsulot boyicha qo'shimcha ma'lumotlar mavjud emas!!"
 }
-color.onkeyup = function(){
-    let a = document.querySelector('#card-color')
+
+color.onchange = function(){
+    let a = document.getElementById('card-color-asd')
     a.innerHTML = color.value
+}
+type.onchange = function(){
+    let a = document.getElementById('card-type')
+    a.innerHTML = type.value
 }
