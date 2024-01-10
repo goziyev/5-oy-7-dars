@@ -32,7 +32,7 @@ e.preventDefault();
         document.getElementById("card-price").innerHTML ="2400$"
         document.getElementById("card-color").innerHTML ="Black"
         document.getElementById("card-description").innerHTML ="Noutbuk Adreamer 16 dyuymli 8 GB RAM 512 GB SSD, ko'k"
-        document.getElementById("card-picture").setAttribute("src","https://images.uzum.uz/cla98rl6sfhgee0lrapg/original.jpg")
+        document.getElementById("card-picture").setAttribute("src","../images/cla98rl6sfhgee0lrapg.jpg")
     }else{
         console.log("Validation error");
     }
