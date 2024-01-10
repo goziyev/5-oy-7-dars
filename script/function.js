@@ -117,6 +117,34 @@ function filteredDate (filter){
             return el.price <= filter.maxPrice
         })
     }
+    if (filter.search) {
+         
+      filteredDate = filteredDate.filter( el => {
+        if(el.description.includes(filter.search)){
+          return el.description.includes(filter.search) == true;
+        }
+        else if(el.name.includes(filter.search)){
+
+          return el.name.includes(filter.search) == true;
+        }
+        
+        else if(el.price.includes(Number(filter.search))){
+          return el.price.includes(Number(filter.search)) == true;
+        }
+        
+        else if(el.type.includes((filter.search).toLowerCase())){
+
+          return el.type.includes((filter.search).toLowerCase()) == true;
+        }
+      
+        else if(el.color.includes((filter.search).toLowerCase())){
+          return el.color.includes((filter.search).toLowerCase()) == true;
+        }
+
+      })
+   }
+  
+
 
     if(filter.minPrice > filter.maxPrice){
         alert("Boshlang'ich narxlar tugash narxidan katta bo'lishi mumkin emas")
@@ -128,7 +156,7 @@ function filteredDate (filter){
     return filteredDate
 }
 
-function filterFunction(color,type,minPrice,maxPrice){
+function filterFunction(color,type,minPrice,maxPrice,search){
     let filter = {}
     if(color.value){
         filter.color = color.value
@@ -142,6 +170,10 @@ function filterFunction(color,type,minPrice,maxPrice){
     if(maxPrice.value){
         filter.maxPrice = maxPrice.value
     }
+    if (search.value) {
+      filter.search = search.value;
+    }
+
     return filter
 
 }

@@ -7,6 +7,7 @@ const type  = document.getElementById("type")
 const form = document.getElementById("form")
 const color  = document.getElementById("color")
 let data = getDateFromLocalStorage();
+const search =  document.getElementById("search")
 
 
 document.addEventListener("DOMContentLoaded" ,function(){
@@ -20,7 +21,8 @@ document.addEventListener("DOMContentLoaded" ,function(){
 
 button && button.addEventListener("click",function(e){
     e.preventDefault();
-    let filter = filterFunction(color,type,minPrice,maxPrice);
+    let filter = filterFunction(color,type,minPrice,maxPrice,search);
+    
     let filteredDatE = filteredDate(filter)
     wrapper.innerHTML = "";
     if (filteredDatE.length) {
